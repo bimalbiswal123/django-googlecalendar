@@ -8,7 +8,7 @@ from googlecalendar.models import Account
 class Command(BaseCommand):
         
     def handle(self, *args, **options):
-        accounts = Account.all()
+        accounts = Account.objects.all()
         for account in accounts:
             account._get_service()
             cals = account.get_own_calendars()
